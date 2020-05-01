@@ -48,44 +48,24 @@ y.add(6)
 y.add(4)
 
 
-
 def addTwoNumbers(l1, l2):
-    int1 = 0
-    d = 1
-    node = l1
-    while node:
-        int1 += node.val*d
-        d = d*10
-        node = node.next
-    #print(ch1)
+    ret = curr = ListNode(0)
+    take_away = 0
+    while l1 or l2 or take_away:
+        v1 = v2 = 0
+        if l1:
+            v1 = l1.val
+            l1 = l1.next
+        if l2:
+            v2 = l2.val
+            l2 = l2.next
+        total = v1 + v2 + take_away
+        take_away = total // 10
+        val = total % 10
+        curr.next = ListNode(val)
+        curr = curr.next
+    return  ret.next
 
-    int2 = 0
-    d = 1
-    node = l2
-    while node:
-        int2 += node.val * d
-        d = d * 10
-        node = node.next
-    #print(ch2)
-    result_int = int1 + int2
-    temp = result_int % 10
-    lastbox = ListNode(temp)
-
-    temp = result_int
-
-    while temp > 1:
-        if temp < 10:
-            #node = ListNode(temp)
-
-            node = ListNode(temp)
-            lastbox.next = node
-
-        else:
-            lastbox.next = ListNode(temp % 10)
-
-        temp = temp // 10
-
-    return lastbox
 
 
 z = LinkedList()
