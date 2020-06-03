@@ -1,3 +1,5 @@
+#https://leetcode.com/problems/add-two-numbers/
+
 # Definition for singly-linked list.
 class ListNode(object):
     def __init__(self, val=0, next=None):
@@ -64,8 +66,7 @@ def addTwoNumbers(l1, l2):
         val = total % 10
         curr.next = ListNode(val)
         curr = curr.next
-    return  ret.next
-
+    return ret.next
 
 
 z = LinkedList()
