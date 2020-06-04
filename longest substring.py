@@ -2,10 +2,7 @@
 
 class Solution(object):
     def unique_symbols(self, s):
-        char_set = set()
-        for i in s:
-            char_set.add(i)
-        return len(char_set) == len(s)
+        return len(set(list(s))) == len(s)
 
 
     def lengthOfLongestSubstring(self, s):
@@ -32,7 +29,7 @@ class Solution(object):
             if len_substr < len(k):
                 len_substr = len(k)
         #print(k)
-        #print(unique_sub_set)
+        #print(sorted(unique_sub_set, key=len, reverse=True))
         return len_substr
 
 
@@ -40,12 +37,17 @@ class Solution(object):
 # x = "" #abc 3
 # print(Solution().lengthOfLongestSubstring(x))
 x = "abcabcbb" #abc 3
-
 print(Solution().lengthOfLongestSubstring(x))
+print(Solution().unique_symbols('abcd'))
 x = "bbbbb" #b 1
-
 print(Solution().lengthOfLongestSubstring(x))
+print(Solution().unique_symbols(x))
 x = "pwwkew" #wke 3
 print(Solution().lengthOfLongestSubstring(x))
 x = "abcdefg" #wke 3
 print(Solution().lengthOfLongestSubstring(x))
+
+with open('input.txt') as file:
+    data = file.read()
+
+print(Solution().lengthOfLongestSubstring(data))
