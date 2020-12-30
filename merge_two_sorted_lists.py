@@ -41,11 +41,10 @@ x = LinkedList()
 x.add(1)
 x.add(3)
 
-
-
 y = LinkedList()
 y.add(2)
 y.add(5)
+
 
 
 class Solution(object):
@@ -55,6 +54,10 @@ class Solution(object):
         :type l2: ListNode
         :rtype: ListNode
         """
+        if l1 is None:
+            return l2
+        if l2 is None:
+            return l1
         head = ListNode()
         node = head
         while l1 and l2 is not None:
