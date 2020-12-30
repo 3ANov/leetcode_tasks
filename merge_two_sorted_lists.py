@@ -40,14 +40,12 @@ class LinkedList:
 x = LinkedList()
 x.add(1)
 x.add(3)
-x.add(6)
-x.add(9)
+
+
 
 y = LinkedList()
 y.add(2)
-y.add(4)
-y.add(7)
-y.add(10)
+y.add(5)
 
 
 class Solution(object):
@@ -69,7 +67,13 @@ class Solution(object):
                 node.next = l2
                 l2 = l2.next
             node = node.next
+            if l1 is None:
+                node.val = l2.val
+            if l2 is None:
+                node.val = l1.val
 
+        # print(l1)
+        # print(l2)
         return head
 
 
