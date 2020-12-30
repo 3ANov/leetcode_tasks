@@ -39,15 +39,15 @@ class LinkedList:
 
 x = LinkedList()
 x.add(1)
-x.add(2)
-x.add(4)
-x.add(7)
+x.add(3)
+x.add(6)
+x.add(9)
 
 y = LinkedList()
-y.add(1)
-y.add(3)
-y.add(5)
-y.add(8)
+y.add(2)
+y.add(4)
+y.add(7)
+y.add(10)
 
 
 class Solution(object):
@@ -59,14 +59,17 @@ class Solution(object):
         """
         head = ListNode()
         node = head
-        while l1.next or l2.next is not None:
+        while l1 and l2 is not None:
             if l1.val <= l2.val:
+                node.val = l1.val
                 node.next = l1
                 l1 = l1.next
             else:
+                node.val = l2.val
                 node.next = l2
                 l2 = l2.next
             node = node.next
+
         return head
 
 
