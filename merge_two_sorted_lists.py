@@ -77,8 +77,6 @@ class Solution(object):
             else:
                 node = node.next
 
-        # print(l1)
-        # print(l2)
         return head
 
 
