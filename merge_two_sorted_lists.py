@@ -69,11 +69,13 @@ class Solution(object):
                 node.val = l2.val
                 node.next = l2
                 l2 = l2.next
-            node = node.next
+
             if l1 is None:
                 node.next = l2
-            if l2 is None:
+            elif l2 is None:
                 node.next = l1
+            else:
+                node = node.next
 
         # print(l1)
         # print(l2)
