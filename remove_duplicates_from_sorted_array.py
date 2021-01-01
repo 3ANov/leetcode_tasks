@@ -5,10 +5,18 @@ class Solution(object):
         :rtype: int
         """
         for i in nums:
-            while nums.count(i) != 1:
+            e_count = nums.count(i)
+            el_index = nums.index(i)
+            if e_count > 2:
+                nums[el_index:el_index+e_count] = [i]
+            if 1 < e_count <= 2:
                 nums.remove(i)
 
 
-nums = [0,0,1,1,1,2,2,3,3,4]
+
+
+nums = [-3,-1,0,0,0,3,3]
+# nums[nums.index(0):nums.count(0)-1] = []
+# print(nums)
 Solution().removeDuplicates(nums)
 print(nums)
